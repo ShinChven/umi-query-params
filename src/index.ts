@@ -24,28 +24,23 @@ class QueryParams<T> {
         Object.keys(this.typeMapping).forEach((key) => {
           const type = this.typeMapping[key];
           const value = queries[key];
-          switch (type) {
-            case "boolean":
-              switch (value.toLowerCase()) {
-                case "true":
-                case "1":
-                  queries[key] = true;
-                  break;
-                case "false":
-                case "0":
-                  queries[key] = false;
-                  break;
-                default:
-                  break;
-              }
-              break;
-            case "number":
-              if (typeof value === "string") {
-                queries[key] = parseInt(value, 10);
-              }
-              break;
-            default:
-              break;
+          if (type === 'boolean') {
+            switch (value.toLowerCase()) {
+              case 'true':
+              case '1':
+                queries[key] = true;
+                break;
+              case 'false':
+              case '0':
+                queries[key] = false;
+                break;
+              default:
+                break;
+            }
+          }else if (type === 'number') {
+            if (typeof value === 'string') {
+              queries[key] = Number(value);
+            }
           }
         });
         return queries as unknown as T;
