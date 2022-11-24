@@ -1,0 +1,33 @@
+{
+  "name": "umi-query-params",
+  "version": "1.0.0",
+  "description": "Query modifier for UmiJS with TypeScript support",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "shx rm -rf lib && tsc",
+    "prepublish": "npm run compile"
+  },
+  "keywords": [],
+  "author": {
+    "url": "https://github.com/ShinChven",
+    "name": "ShinChven ZHANG",
+    "email": "shinchven@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/ShinChven/umi-query-params.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^16.18.3",
+    "@types/qs": "^6.9.7",
+    "mocha": "^10.1.0",
+    "shx": "^0.3.4",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.8.4",
+    "umi": "^3.5.35",
+    "qs": "^6.11.0"
+  }
+}
