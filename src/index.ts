@@ -16,7 +16,7 @@ class QueryParams<T> {
     this.typeMapping = typeMapping;
   }
 
-  getQuery():Partial<T> {
+  getQuery(): Partial<T> {
     try {
       const urlComponents = window.location.href.split('?');
       if (urlComponents.length > 1) {
@@ -37,7 +37,7 @@ class QueryParams<T> {
               default:
                 break;
             }
-          }else if (type === 'number') {
+          } else if (type === 'number') {
             if (typeof value === 'string') {
               queries[key] = Number(value);
             }
